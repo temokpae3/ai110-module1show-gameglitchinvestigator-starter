@@ -25,19 +25,30 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [X] Describe the game's purpose.
+The game’s purpose is to guess a magic number using hints that tell the player whether to go higher or lower.
+- [X] Detail which bugs you found.
+I found three bugs: inputs outside the valid range were not properly handled, the start button did not reset after all guesses were used, and changing the difficulty level decreased the number of remaining guesses.
+- [X] Explain what fixes you applied.
+I fixed the out-of-bounds issue by adding a validation check for inputs. I also fixed the reset issue by resetting st.session_state.status when restarting the game.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User sets difficulty to Normal
+2. User enters a guess of -1
+3. Game returns out of bounds
+4. User enters a guess of 50
+5. Game returns "GO LOWER"
+6. User enters a guess of 40
+7. Game returns "GO HIGHER"
+8. User enters a guess of 35
+9. Game returns "GO HIGHER"
+10. User enters a guess of 37
+11. Game returns "GO HIGHER"
+12. User enters a guess of 38
+13. Game ends after the correct guess
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 

@@ -43,11 +43,16 @@ Document at least 3 bugs you found. Add rows as needed.
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 
+Ans: Streamlit "reruns" mean the entire script runs from top to bottom every time the user interacts with the app (like clicking a button or changing an input). Session state is how Streamlit remembers information between these reruns so that data or user inputs aren’t lost each time the app refreshes.
+
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+  Ans: Testing habits, especially checking for possible failures and edge cases early so I can catch bugs before they become bigger problems.
 - What is one thing you would do differently next time you work with AI on a coding task?
+Ans: I would carefully review what the AI produces instead of assuming it is correct.
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+Ans: It changed how I describe issues by focusing more on the exact error messages and expected output when asking for help with debugging.
