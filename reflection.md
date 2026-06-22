@@ -14,26 +14,28 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| Guess of -1 | Program should reject the input and display an "Input out of bounds" message. | Program accepts the input and displays the hint "GO HIGHER!". | None
+| Restart the game after using some guesses |Clicking New Game should reset the game state and start a new game. | Game does not restart when New Game is pressed. | None |
+| Change difficulty after making a guess | Changing difficulty should not affect the number of guesses already remaining. | Number of remaining guesses decreases when difficulty is changed, even though no new guess was made. | None |
 
 ---
 
 ## 2. How did you use AI as a teammate?
 
-- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
-- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
-- Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)? Ans: Claude Code
+- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result). Ans: Claude suggested adding a bounds check inside parse_guess (which required passing in low and high). I verified this by testing an input of -1, and the program correctly returned an out-of-bounds error, confirming the fix worked.
+- Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result). Ans: Claude generated a test file that incorrectly imported functions using import app. I verified this by running the test file, which produced import errors indicating the module structure was incorrect.
 
 ---
 
 ## 3. Debugging and testing your fixes
 
-- How did you decide whether a bug was really fixed?
+- How did you decide whether a bug was really fixed? Ans: I decided a bug was fixed when running the program with the same inputs consistently produced the expected output, especially in edge cases like invalid inputs (out-of-bounds values), and no errors were thrown.
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
-- Did AI help you design or understand any tests? How?
+
+  Ans: The test called test_parse_guess_rejects_negative with input -1 and a range of 1 to 100. It verified that the function returned ok = False, value = None, and that the error message contained "out of bounds". This confirmed that invalid inputs are correctly handled.
+- Did AI help you design or understand any tests? How? Ans: Claude helped generate a test case based on my prompt about checking the bug. I used it as a starting point and reviewed it to make sure it matched the expected behavior of the function.
 
 ---
 
